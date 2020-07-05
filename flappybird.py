@@ -419,7 +419,7 @@ class FlappyBirdGame():
         self.birds = []
         for i in range(birdNum):
             bird = Bird(BIRD_X, int(WIN_HEIGHT/2 - Bird.HEIGHT/2),
-                (view.getImage('bird-wingup'), view.getImage('bird-wingdown')),birdBrains[i])
+                (self.view.getImage('bird-wingup'), self.view.getImage('bird-wingdown')),birdBrains[i])
             self.birds.append(bird)
     
     def run(self):

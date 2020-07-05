@@ -2,6 +2,7 @@ import flappybird as fb
 import pygame
 from pygame.locals import *
 import random
+import time
 class PlayerBrain(fb.Brain): # 玩家大脑
     
     def decideFlap(self,params):
@@ -28,6 +29,7 @@ def train():
     brain = HappyBrain()
     g = fb.FlappyBirdGame(60,1,[brain])
     g.run()
+
     
 if __name__ == '__main__':
     train()
