@@ -1,35 +1,47 @@
 import flappybird as fb
-import pygame
-from pygame.locals import *
 import random
 import time
-class PlayerBrain(fb.Brain): # 玩家大脑
-    
-    def decideFlap(self,params):
-        #print(params)
-        for e in pygame.event.get(): 
-            if e.type == MOUSEBUTTONDOWN or (e.type == KEYDOWN and
-                    e.key in (K_UP, K_RETURN, K_SPACE)):
-                return True
-        return False
-class HappyBrain(fb.Brain):
+
+import sklearn
+class GeneticBrain(fb.Brain):
     def __init__(self):
-        random.seed(2000)
+        pass
     def decideFlap(self,params):
-        #print(params)
-        if params['height'] < 40:
-            return False
-        r = random.randint(0,1000)       
-        return r > 940   
+        pass
+class GeneticAlgorithm():
+    def __init__(self,max_units,top_units):
+        self.max_units = max_units
+        self.top_units = top_units
+        
+        if max_units < top_units:
+            self.top_units = max_units
+        
+        self.population = []
+        self.SCALE_FACTOR = 200
 
-
-
-
+    def reset(self):
+        self.iteration = 1
+        self.mutateRate = 1
+        self.best_population = 0
+        self.best_fitness = 0
+        self.best_score = 0
+    
+    def createPopulation(self):
+        self.population = []
+        for i in range(self.max_units):
+            
+            new
+    
+    
+    
 def train():
     brain = HappyBrain()
+    i = 0
     g = fb.FlappyBirdGame(60,1,[brain])
-    g.run()
-
+    while i < 5:   
+        g.run()
+        g.reset(1,[brain])
+        i += 1
     
 if __name__ == '__main__':
     train()

@@ -25,11 +25,7 @@ class BirdBrain(Brain):
         pass
     def decideFlap(self,params):
         #print(params)
-        for e in pygame.event.get(): 
-            if e.type == MOUSEBUTTONDOWN or (e.type == KEYDOWN and
-                    e.key in (K_UP, K_RETURN, K_SPACE)):
-                return True
-        return False
+        return params['playerClick']
 class Bird(pygame.sprite.Sprite):
     """Represents the bird controlled by the player.
 
@@ -428,6 +424,7 @@ class FlappyBirdGame():
         score = 0
         view = self.view
         self.dead_birds = []
+        
         while not done:
         
             # Handle this 'manually'.  If we used pygame.time.set_timer(),
@@ -435,7 +432,13 @@ class FlappyBirdGame():
             if not (frame_clock % msec_to_frames(PipePair.ADD_INTERVAL)):
                 pp = PipePair(view.getImage('pipe-end'), view.getImage('pipe-body'))
                 self.pipes.append(pp)
-
+            playerClick = False
+            for e in pygame.event.get(): 
+                if e.type == pygame.QUIT:
+                    done = True
+                elif e.type == KEYDOWN and e.key == K_PAUSE:
+                    playerClick = True
+            
             for p in self.pipes:
                 if p.in_front_of(self.birds[0]):
                     nextPipe = p
@@ -452,7 +455,8 @@ class FlappyBirdGame():
                         "velY": bird.vel_y,
                         "accY": bird.acc_y,
                         "velX": ANIMATION_SPEED * frames_to_msec(1), 
-                        "score": score            
+                        "score": score,
+                        "playerClick": playerClick            
                 }
                 if bird.brain.decideFlap(params):                  
                     bird.flap() 
@@ -508,6 +512,7 @@ class FlappyBirdGame():
      
     def __del__(self):
         self.view.quitView()
+        pygame.quit()
     
     
 
