@@ -448,7 +448,7 @@ class FlappyBirdGame():
             for bird in self.birds:
                 params = {
                         "bottomPipeHeight": nextPipe.bottom_height_px,            
-                        "topPipeHeight": nextPipe.top_height_px,
+                        "topPipeHeight": WIN_HEIGHT - nextPipe.top_height_px,
                         "pipeWidth": PipePair.WIDTH,
                         "distance": nextPipe.X - BIRD_X,
                         "height": bird.Height,
@@ -456,7 +456,8 @@ class FlappyBirdGame():
                         "accY": bird.acc_y,
                         "velX": ANIMATION_SPEED * frames_to_msec(1), 
                         "score": score,
-                        "playerClick": playerClick            
+                        "playerClick": playerClick,  
+                        "interval":PipePair.ADD_INTERVAL          
                 }
                 if bird.brain.decideFlap(params):                  
                     bird.flap() 
