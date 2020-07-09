@@ -1,0 +1,148 @@
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Game over! Score: 0
+Generation 0:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 1:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 2:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 3:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 4:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 5:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 6:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 7:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 8:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 9:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 10:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 11:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 12:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 13:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 14:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 15:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 16:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 17:
+0: fitness = -136.000000 score = 0
+1: fitness = -136.000000 score = 0
+2: fitness = -136.000000 score = 0
+3: fitness = -136.000000 score = 0
+recreate popultation
+best score = 0   best fitness = 0
+Game over! Score: 0
+Generation 18:

@@ -15,7 +15,7 @@ FPS = 60
 ANIMATION_SPEED = 0.18  # pixels per millisecond
 WIN_WIDTH = 284 * 2     # BG image size: 284x512 px; tiled twice
 WIN_HEIGHT = 512
-BIRD_X = 50
+BIRD_X = 350
 
 class Brain(metaclass=ABCMeta):
     @abstractmethod
@@ -280,7 +280,7 @@ class PipePair(pygame.sprite.Sprite):
         delta_frames: The number of frames elapsed since this method was
             last called.
         """
-        self.x -= ANIMATION_SPEED * frames_to_msec(delta_frames)
+        self.x -= ANIMATION_SPEED * frames_to_msec(delta_frames,FPS)
 
     def collides_with(self, bird):
         """Get whether the bird collides with a pipe in this PipePair.
@@ -391,6 +391,7 @@ def msec_to_frames(milliseconds, fps=FPS):
 
 class FlappyBirdGame():
     def __init__(self,fps,birdNum,birdBrains):
+        FPS = fps
         self.view = GameView()
         
         # the bird stays in the same x position, so bird.x is a constant
@@ -429,14 +430,14 @@ class FlappyBirdGame():
         
             # Handle this 'manually'.  If we used pygame.time.set_timer(),
             # pipe addition would be messed up when paused.
-            if not (frame_clock % msec_to_frames(PipePair.ADD_INTERVAL)):
+            if not (frame_clock % msec_to_frames(PipePair.ADD_INTERVAL,FPS)):
                 pp = PipePair(view.getImage('pipe-end'), view.getImage('pipe-body'))
                 self.pipes.append(pp)
             playerClick = False
             for e in pygame.event.get(): 
                 if e.type == pygame.QUIT:
                     done = True
-                elif e.type == KEYDOWN and e.key == K_PAUSE:
+                elif e.type == KEYDOWN and e.key in (K_UP, K_RETURN, K_SPACE):
                     playerClick = True
             
             for p in self.pipes:
@@ -444,7 +445,7 @@ class FlappyBirdGame():
                     nextPipe = p
                     break
                 
-            
+            params = {}
             for bird in self.birds:
                 params = {
                         "bottomPipeHeight": nextPipe.bottom_height_px,            
@@ -454,14 +455,14 @@ class FlappyBirdGame():
                         "height": bird.Height,
                         "velY": bird.vel_y,
                         "accY": bird.acc_y,
-                        "velX": ANIMATION_SPEED * frames_to_msec(1), 
+                        "velX": ANIMATION_SPEED * frames_to_msec(1,FPS), 
                         "score": score,
                         "playerClick": playerClick,  
-                        "interval":PipePair.ADD_INTERVAL          
+                        "interval":PipePair.ADD_INTERVAL * ANIMATION_SPEED         
                 }
                 if bird.brain.decideFlap(params):                  
                     bird.flap() 
-
+            #print(params)
 
             # check for collisions
             for bird in self.birds[::-1]:
@@ -475,8 +476,9 @@ class FlappyBirdGame():
                         "height": bird.Height,
                         "velY": bird.vel_y,
                         "accY": bird.acc_y,
-                        "velX": ANIMATION_SPEED * frames_to_msec(1), 
-                        "score": score            
+                        "velX": ANIMATION_SPEED * frames_to_msec(1,FPS), 
+                        "score": score,
+                        "interval":PipePair.ADD_INTERVAL * ANIMATION_SPEED           
                     }
                     self.dead_birds.append([bird,params])
                     self.birds.remove(bird)

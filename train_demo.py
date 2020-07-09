@@ -6,7 +6,7 @@ import time
 class PlayerBrain(fb.Brain): # 玩家大脑
     
     def decideFlap(self,params):
-        #print(params)
+        print(params)
         return params['playerClick']
 class HappyBrain(fb.Brain):
     def __init__(self):
@@ -23,12 +23,12 @@ class HappyBrain(fb.Brain):
 
 
 def train():
-    brain = HappyBrain()
+    brain = PlayerBrain()
     i = 0
-    g = fb.FlappyBirdGame(60,5,[brain]*5)
-    while i < 5:   
+    g = fb.FlappyBirdGame(60,1,[brain])
+    while i < 1:   
         g.run()
-        g.reset(5,[brain]*5)
+
         i+=1
     
 if __name__ == '__main__':
